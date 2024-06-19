@@ -24,6 +24,8 @@ class mail_sender(ThemedTk):
 
     Args:
         geometry (Monitor): The geometry of the monitor to display the app on.
+
+    Commented parts are related to the robotics club.
     """
     def __init__(self, geometry):
         super().__init__()
@@ -167,7 +169,7 @@ class mail_sender(ThemedTk):
                                    self.values['photo_width'], self.values['photo_height'], 
                                    self.values['photo_position_x'], self.values['photo_position_y'])
             
-            msgImage = MIMEImage(self.logo_response.content)
+            # msgImage = MIMEImage(self.logo_response.content)
             msgImage2 = MIMEImage(img_buffer.read())
 
             part1 = MIMEText(msg_t, "plain")
@@ -178,9 +180,9 @@ class mail_sender(ThemedTk):
             message.attach(part2)
 
             # Attach the images.
-            msgImage.add_header('Content-ID', '<image1>')
+            # msgImage.add_header('Content-ID', '<image1>')
             msgImage2.add_header('Content-ID', '<image2>')
-            message.attach(msgImage)
+            # message.attach(msgImage)
             message.attach(msgImage2)
     
             # Send the email.

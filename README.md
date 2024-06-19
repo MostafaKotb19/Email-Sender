@@ -1,4 +1,4 @@
-# Email-sender
+# Email-Sender
 An automated tool designed to streamline the process of sending personalized emails to multiple recipients with integrated images and hyperlinks. Developed using Python and Tkinter, it supports customization through a user-friendly GUI and ensures efficient and error-free email communication.
 
 The tool can currently send personalized emails with different variables, hyperlinks and images.

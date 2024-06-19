@@ -47,6 +47,14 @@ def html_formatter(text, hyper_dict, width, height, pos_x, pos_y):
             {'&nbsp;'*pos_x if pos_x != 0 else ''}
             {f'<img src="cid:image2" width="{width}" height="{height} style="position:relative; margin-bottom:50px;"><br>' 
              if width != 0 and height != 0 else ''}
+            Sincerely,<br>
+            --<br><br>
+            <img src="cid:image1" width="200" height="77"><br>
+            <i>This email was sent by an automated tool which was completely developed by Robotics Club members.</i><br>
+            <font color="#e06666"><b>Info:</b></font> robotics.club@ejust.edu.eg<br>
+            <font color="#e06666"><b>FB:</b></font> https://www.facebook.com/EJUST.Robotics/<br>
+            <font color="#e06666"><b>LI:</b></font> https://www.linkedin.com/company/e-just-robotics-club/<br>
+            <font color="#e06666"><b>IG:</b></font> https://www.instagram.com/robotics_ejust/<br><br>
         </p>
     </body>
 </html>
@@ -59,4 +67,5 @@ def html_formatter(text, hyper_dict, width, height, pos_x, pos_y):
 # <font color="#e06666"><b>Info:</b></font> robotics.club@ejust.edu.eg<br>
 # <font color="#e06666"><b>FB:</b></font> https://www.facebook.com/EJUST.Robotics/<br>
 # <font color="#e06666"><b>LI:</b></font> https://www.linkedin.com/company/e-just-robotics-club/<br><br>
+# <font color="#e06666"><b>IG:</b></font> https://www.instagram.com/robotics_ejust/<br><br>
     return text_h

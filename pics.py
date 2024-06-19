@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter.ttk import Frame, Label, Entry, Button
+from tkinter.ttk import Frame, Label, Entry, Button, Combobox
 
 class pics(Frame):
     """
@@ -26,7 +26,9 @@ class pics(Frame):
         Label(self, text="Photo Position", background="#FFFFFF", font=self.master.label_font).grid(
         row=3, column=0, sticky="w", pady=5)
 
-        self.photo_extension = Entry(self, width=20, font=self.master.entry_font)            # Photo Extension Entry
+        self.photo_extension = Combobox(self, width=20, font=self.master.entry_font)         # Photo Extension Combobox
+        self.photo_extension['values'] = ['jpg', 'png', 'gif']
+        self.photo_extension.current(0)
         self.photo_extension.grid(row=0, column=1, sticky="w", pady=5, padx=5)
         self.photo_width = Entry(self, width=20, font=self.master.entry_font)                # Photo Width Entry
         self.photo_width.grid(row=1, column=1, sticky="w", pady=5, padx=5)

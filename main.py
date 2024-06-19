@@ -295,7 +295,7 @@ class mailSender(ThemedTk):
                                    self.values['photo_width'], self.values['photo_height'], 
                                    self.values['photo_position_x'], self.values['photo_position_y'])
             
-            msg_image = MIMEImage(self.logo_response.content)
+            # msg_image = MIMEImage(self.logo_response.content)
 
             part1 = MIMEText(msg, "plain")
             part2 = MIMEText(msg_h, "html")
@@ -305,8 +305,8 @@ class mailSender(ThemedTk):
             message.attach(part2)
 
             # Attach the images.
-            msg_image.add_header('Content-ID', '<image1>')
-            message.attach(msg_image)
+            # msg_image.add_header('Content-ID', '<image1>')
+            # message.attach(msg_image)
     
             # Send the email.
             try:

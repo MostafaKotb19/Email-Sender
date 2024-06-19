@@ -164,10 +164,11 @@ class mailSender(ThemedTk):
             img.save(img_buffer, format=img.format)
             img_buffer.seek(0)
 
-            msg_t = msg + \
-            "\nSincerely,\n--\n\nThis email was sent by an automated tool which was completely developed by Robotics Club members.\
-            \nInfo: robotics.club@ejust.edu.eg\nFB: https://www.facebook.com/EJUST.Robotics/\
-            \nLI: https://www.linkedin.com/company/e-just-robotics-club/\n\n"                  # Add the signature.
+            msg_t = msg
+            # + \
+            # "\nSincerely,\n--\n\nThis email was sent by an automated tool which was completely developed by Robotics Club members.\
+            # \nInfo: robotics.club@ejust.edu.eg\nFB: https://www.facebook.com/EJUST.Robotics/\
+            # \nLI: https://www.linkedin.com/company/e-just-robotics-club/\n\n"                  # Add the signature.
             msg_h = utils.html_formatter(msg, self.hyper_dict,                                 # Convert the mail text to HTML.
                                    self.values['photo_width'], self.values['photo_height'], 
                                    self.values['photo_position_x'], self.values['photo_position_y'])

@@ -61,7 +61,7 @@ class data(Frame):
                        bd=0, highlightthickness=1, highlightbackground="#dbe0ec", highlightcolor="#8eb9ec")
         self.text.grid(row=11, column=1, columnspan=3, padx=10, pady=5, sticky="w", ipadx=5)         # Mail Text Entry
 
-        send = Button(self, text = "Send", command = self.master.onClick)                            # Send Button
+        send = Button(self, text = "Send", command = self.master.on_click)                            # Send Button
         send.grid(row=12, column=1)
 
         abortt = Button(self, text = "Abort", command = self.master.abort)                           # Abort Button

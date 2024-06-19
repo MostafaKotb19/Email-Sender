@@ -1,23 +1,26 @@
-import tkinter as tk
-from tkinter.ttk import Label, Style
-from ttkthemes import ThemedTk
-import requests
+import os
 from PIL import Image, ImageTk
 from io import BytesIO
-from tkinter import font
+
 import pandas as pd
-import threading
 import smtplib
 import ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
-import os
+import threading
+import requests
+
+import tkinter as tk
+from tkinter.ttk import Label, Style
+from ttkthemes import ThemedTk
+from tkinter import font
+
 from screeninfo import get_monitors
 
 import data, pics, log, utils
 
-class mail_sender(ThemedTk):
+class mailSender(ThemedTk):
     """
     The main class that contains the GUI of the app.
     Inherits from ThemedTk to use the ttkthemes library.
@@ -89,7 +92,7 @@ class mail_sender(ThemedTk):
         self.style.configure("TButton", background="#FFFFFF", font=self.button_font)
         self.style.configure("TEntry", background="#f8f8f8", bordercolor="#FF0000")
 
-    def onClick(self):
+    def on_click(self):
         """
         Collects the values from the fields and starts sending the emails.
         """
@@ -169,8 +172,8 @@ class mail_sender(ThemedTk):
                                    self.values['photo_width'], self.values['photo_height'], 
                                    self.values['photo_position_x'], self.values['photo_position_y'])
             
-            # msgImage = MIMEImage(self.logo_response.content)
-            msgImage2 = MIMEImage(img_buffer.read())
+            # msg_image = MIMEImage(self.logo_response.content)
+            msg_image2 = MIMEImage(img_buffer.read())
 
             part1 = MIMEText(msg_t, "plain")
             part2 = MIMEText(msg_h, "html")
@@ -180,10 +183,10 @@ class mail_sender(ThemedTk):
             message.attach(part2)
 
             # Attach the images.
-            # msgImage.add_header('Content-ID', '<image1>')
-            msgImage2.add_header('Content-ID', '<image2>')
-            # message.attach(msgImage)
-            message.attach(msgImage2)
+            # msg_image.add_header('Content-ID', '<image1>')
+            msg_image2.add_header('Content-ID', '<image2>')
+            # message.attach(msg_image)
+            message.attach(msg_image2)
     
             # Send the email.
             try:
@@ -216,5 +219,5 @@ if __name__ == "__main__":
     monitors = get_monitors()     # Get the monitor information.
     monitor = monitors[0]
 
-    app = mail_sender(monitor)
+    app = mailSender(monitor)
     app.mainloop()

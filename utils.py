@@ -10,8 +10,6 @@ def formatter(text, variables, sheet, j):
 
     Returns:
         str: The formatted mail text.
-
-    Commented parts are related to the robotics club.
     """
     text_f = text
     for i in variables:
@@ -33,6 +31,8 @@ def html_formatter(text, hyper_dict, width, height, pos_x, pos_y):
 
     Returns:
         str: The formatted mail text in HTML format.
+
+    Commented parts are related to the robotics club.
     """
     text_br = text.replace("\n", "<br>")
     
@@ -46,7 +46,7 @@ def html_formatter(text, hyper_dict, width, height, pos_x, pos_y):
             {'<br>'*pos_y if pos_y != 0 else ''}
             {'&nbsp;'*pos_x if pos_x != 0 else ''}
             {f'<img src="cid:image2" width="{width}" height="{height} style="position:relative; margin-bottom:50px;"><br>' 
-             if width != 0 and height != 0 else ''}
+             if width != 0 or height != 0 else ''}
         </p>
     </body>
 </html>

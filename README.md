@@ -6,7 +6,7 @@ The tool can currently send personalized emails with different variables, hyperl
 ## Install
 To create an environment with the requirements:
 ```
-cond env create -f environment.yml
+conda env create -f environment.yml
 conda activate mail_sender
 ```
 

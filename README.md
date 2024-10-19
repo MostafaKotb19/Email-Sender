@@ -4,10 +4,17 @@ An automated tool designed to streamline the process of sending personalized ema
 The tool can currently send personalized emails with different variables, hyperlinks and images.
 
 ## Install
-To create an environment with the requirements:
+To create an environment with the requirements through conda:
 ```
 conda env create -f environment.yml
 conda activate mail_sender
+```
+
+Or through a venv:
+```
+python -m venv mail_sender
+source mail_sender/bin/activate #(on linux)
+./mail_sender/Scripts/activate.bat #(on windows)
 ```
 
 ## Usage
